@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bt30b5wnbb6eo"]
+
+[ext_resource type="Texture2D" uid="uid://vgls008lgqao" path="res://textures/stonewall.jpg" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://c1scrbwmhd4ep" path="res://scenes/car.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://b8c4upwsxa88b" path="res://scripts/path_follow_3d.gd" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://dnxij3ly64to7" path="res://scripts/car.gd" id="3_sugp2"]
+
+[sub_resource type="Curve3D" id="Curve3D_sgp6g"]
+closed = true
+_data = {
+"points": PackedVector3Array(0.07506037, 0.0022238083, -2.881844, -0.07506037, -0.0022238083, 2.881844, -6.571596, 2.0013711, 1.3448555, -2.2549272, 0.0013962477, -1.4494185, 2.2549272, -0.0013962477, 1.4494185, -2.9396796, -0.0050121658, 6.8106766, -0.11069435, -0.0010230942, 1.3228197, 0.11069435, 0.0010230942, -1.3228197, 0.9038283, -0.005455017, 6.791609, -1.0353274, 0.1485064, 0.5864568, 1.0353274, -0.1485064, -0.5864568, 3.794561, 0.9992329, 5.157794, -0.17232704, -0.00086304196, 1.1137235, 0.17232704, 0.00086304196, -1.1137235, 6.7616887, 0.9986023, 1.8117285, 0.777822, -0.0006878382, 0.7471043, -0.777822, 0.0006878382, -0.7471043, 5.4735317, -0.0002593994, -0.5035925, -0.30873775, -0.39140257, 0.8790419, 0.30873775, 0.39140257, -0.8790419, 5.265817, 0.3611436, -4.3387036, -0.52780247, -0.5124022, 1.1282921, 0.52780247, 0.5124022, -1.1282921, 12.358326, 0.0065364838, -10.184988, 0.054572105, -0.45093095, 1.0874901, -0.054572105, 0.45093095, -1.0874901, 13.8910265, 0.008987427, -13.5306015, 1.5378971, -0.3099851, 1.0208826, -1.5378971, 0.3099851, -1.0208826, 13.299126, 0.011764526, -16.96308, 0.39229012, 0.3640843, -0.798584, -0.39229012, -0.3640843, 0.798584, 10.201417, 0.011554718, -16.21985, 1.364008, 0.39829367, -0.70326996, -1.364008, -0.39829367, 0.70326996, 8.565092, 0.009799957, -13.73978, 0.7471967, -0.20478913, 0.62543106, -0.7471967, 0.20478913, -0.62543106, 5.165641, 0.010059357, -13.54927, 0.5933361, -0.4641791, 1.2172451, -0.5933361, 0.4641791, -1.2172451, 4.5045204, 0.012718201, -16.822723, 0.859885, 0.033036605, 0.077674866, -0.859885, -0.033036605, -0.077674866, 1.9469957, 0.014434814, -18.610521, 0.5997877, 0.44097227, -0.9445362, -0.5997877, -0.44097227, 0.9445362, -3.0686655, 0.00055672834, -19.457216, 0.9533272, 0.46197087, -0.93029404, -0.9533272, -0.46197087, 0.93029404, -6.524023, 0.013671875, -16.342604, -1.3346472, 0.03503537, -0.32682037, 1.3346472, -0.03503537, 0.32682037, -5.4616575, 0.01115036, -13.293432, 0.57073855, 0.97664404, -2.2298703, -0.57073855, -0.97664404, 2.2298703, -2.6111221, 4.000519, -5.7068872),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 19
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
+albedo_texture = ExtResource("1_o5qli")
+
+[sub_resource type="Environment" id="Environment_oc8w6"]
+
+[node name="Main" type="Node3D" unique_id=928334609]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=309305592]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Path3D" type="Path3D" parent="." unique_id=519235080]
+transform = Transform3D(0.9659258, -0.00019966824, 0.25881895, 0.00020782759, 1, -4.1642634e-06, -0.25881895, 5.781211e-05, 0.9659258, 0, 0, 0)
+curve = SubResource("Curve3D_sgp6g")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D" unique_id=207347300]
+polygon = PackedVector2Array(0, 0, -0.009901286, 0.10404864, 1.0059309, 0.10699394, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_o5qli")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1635196791]
+transform = Transform3D(-0.99965864, -2.0085268e-05, 0.026037015, 2.7284778e-12, 0.9999962, 0.0007714132, -0.026036987, 0.0007711497, -0.9996597, -6.571596, 2.0013711, 1.3448555)
+script = ExtResource("2_jyhfs")
+
+[node name="car" parent="Path3D/PathFollow3D" unique_id=752035610 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 5.456968e-12, 0, -2.728484e-12, 1, 0, -1.4901161e-08, 0, 1, 0, 0, 0)
+script = ExtResource("3_sugp2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1948889144]
+environment = SubResource("Environment_oc8w6")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1500508429]
+transform = Transform3D(0.809017, -0.15213001, 0.56775695, 0, 0.9659258, 0.25881904, -0.58778524, -0.209389, 0.7814504, 7.7377453, 5.625127, 9.317875)
