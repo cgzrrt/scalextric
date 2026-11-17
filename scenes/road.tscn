@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ipnhkuvp326t"]
+
+[ext_resource type="ArrayMesh" uid="uid://chbufhdtvhlhh" path="res://models/roads/Free Sample-0-Crossing.obj" id="1_my2y2"]
+[ext_resource type="Texture2D" uid="uid://bnxor4gdgyxgv" path="res://models/roads/Free Sample-0-Crossing.png" id="2_fy6l0"]
+[ext_resource type="ArrayMesh" uid="uid://bloroqgmhhcsn" path="res://models/roads/Free Sample-1-Crossing.obj" id="3_fy6l0"]
+[ext_resource type="ArrayMesh" uid="uid://c6n5t5w131ypv" path="res://models/roads/Free Sample-2-Street-8.obj" id="4_xeiim"]
+[ext_resource type="ArrayMesh" uid="uid://bldbhwrk2jck6" path="res://models/roads/Free Sample-3-Street-6.obj" id="5_wqt8r"]
+[ext_resource type="ArrayMesh" uid="uid://8nrejao3mudl" path="res://models/roads/Free Sample-4-Street-6.obj" id="6_3kywd"]
+[ext_resource type="ArrayMesh" uid="uid://be4sww6crwkl8" path="res://models/roads/Free Sample-5-Street-8.obj" id="7_6cvvo"]
+[ext_resource type="ArrayMesh" uid="uid://bj78o25pia5bg" path="res://models/roads/Free Sample-6-RoadSign-60.obj" id="8_geyta"]
+[ext_resource type="ArrayMesh" uid="uid://dittb6rhsotis" path="res://models/roads/Free Sample-7-RoadSign-64.obj" id="9_nwgkl"]
+[ext_resource type="ArrayMesh" uid="uid://d4eprggn6b7wq" path="res://models/roads/Free Sample-8-RoadSign-66.obj" id="10_piesd"]
+[ext_resource type="ArrayMesh" uid="uid://bd1c31l6ori7q" path="res://models/roads/Free Sample-9.obj" id="11_ji4hn"]
+[ext_resource type="ArrayMesh" uid="uid://bi3jh87kcjdhq" path="res://models/roads/Free Sample-14.obj" id="12_wd2is"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekj83"]
+albedo_texture = ExtResource("2_fy6l0")
+
+[node name="Road" type="Node3D" unique_id=686287365]
+
+[node name="CrossingRoad0" type="MeshInstance3D" parent="." unique_id=1542953497]
+mesh = ExtResource("1_my2y2")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekj83")
+
+[node name="CrossingRoad1" type="MeshInstance3D" parent="." unique_id=1591956924]
+mesh = ExtResource("3_fy6l0")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekj83")
+
+[node name="CrossingRoad2" type="MeshInstance3D" parent="." unique_id=1098648931]
+mesh = ExtResource("4_xeiim")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekj83")
+
+[node name="CrossingRoad3" type="MeshInstance3D" parent="." unique_id=1044412725]
+mesh = ExtResource("5_wqt8r")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekj83")
+
+[node name="CrossingRoad4" type="MeshInstance3D" parent="." unique_id=1792903497]
+mesh = ExtResource("6_3kywd")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekj83")
+
+[node name="CrossingRoad5" type="MeshInstance3D" parent="." unique_id=154871166]
+mesh = ExtResource("7_6cvvo")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekj83")
+
+[node name="RoadSign1" type="MeshInstance3D" parent="." unique_id=609720168]
+mesh = ExtResource("8_geyta")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekj83")
+
+[node name="RoadSign2" type="MeshInstance3D" parent="." unique_id=740794579]
+mesh = ExtResource("9_nwgkl")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekj83")
+
+[node name="RoadSign3" type="MeshInstance3D" parent="." unique_id=1145829642]
+mesh = ExtResource("10_piesd")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekj83")
+
+[node name="RoadSign4" type="MeshInstance3D" parent="." unique_id=805976068]
+mesh = ExtResource("11_ji4hn")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekj83")
+
+[node name="RoadSign5" type="MeshInstance3D" parent="." unique_id=489532001]
+mesh = ExtResource("12_wd2is")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekj83")
