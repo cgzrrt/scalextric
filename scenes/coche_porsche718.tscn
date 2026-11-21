@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://l12pf2n8dj2y"]
+
+[ext_resource type="PackedScene" uid="uid://6lqggwudr4fr" path="res://scenes/coche.tscn" id="1_8s1yw"]
+[ext_resource type="PackedScene" uid="uid://cpa01g08aepyr" path="res://models/porsche 718/10-Car.fbx" id="2_j575l"]
+
+[node name="Coche" unique_id=518288785 instance=ExtResource("1_8s1yw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1788524861]
+transform = Transform3D(0.5426689, 0, 0, 0, 1.0468792, 0, 0, 0, 1.1714946, 0, 0.24935162, 0.048461914)
+
+[node name="Carroceria" parent="." index="1" unique_id=1858971385]
+transform = Transform3D(0.14602418, 0, 0, 0, 0.14602418, 0, 0, 0, 0.14602418, -0.049438346, -0.35283005, -0.02554479)
+mesh = null
+
+[node name="10-Car" parent="Carroceria" index="0" unique_id=752754624 instance=ExtResource("2_j575l")]
+transform = Transform3D(3.0751731, 0, 0, 0, 3.0751731, 0, 0, 0, 3.0751731, 0.071612485, 2.7285278, -0.0069429884)

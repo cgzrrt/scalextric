@@ -4,6 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://e7k1x0mp8oqt" path="res://models/Car.obj" id="1_o4fc0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3onqv"]
+size = Vector3(1, 0.6032715, 1.4755859)
 
 [node name="Coche" type="RigidBody3D" unique_id=518288785 node_paths=PackedStringArray("label_velocimetro")]
 freeze = true
@@ -13,14 +14,15 @@ limite_agarre = 300.0
 tolerancia_derrape = 0.25
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1788524861]
+transform = Transform3D(0.5426689, 0, 0, 0, 0.85803986, 0, 0, 0, 1.0447541, 0, 0.3162064, 0.048461914)
 shape = SubResource("BoxShape3D_3onqv")
 
 [node name="Carroceria" type="MeshInstance3D" parent="." unique_id=1858971385]
-transform = Transform3D(0.66324425, 0, 0, 0, 0.61264086, 0, 0, 0, 0.56039816, 0, 0, 0)
+transform = Transform3D(0.32518497, 0, 0, 0, 0.32518497, 0, 0, 0, 0.32518497, -0.023287302, 0.012723838, 0.0022577553)
 mesh = ExtResource("1_o4fc0")
 
 [node name="Velocimetro" type="Label3D" parent="." unique_id=27511083]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6858438, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 offset = Vector2(0, 1.5)
 billboard = 1
 text = "0"
