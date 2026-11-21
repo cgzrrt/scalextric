@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://6lqggwudr4fr"]
+
+[ext_resource type="Script" uid="uid://dflaapam61rh7" path="res://scenes/coche.gd" id="1_4bayn"]
+[ext_resource type="ArrayMesh" uid="uid://e7k1x0mp8oqt" path="res://models/Car.obj" id="1_o4fc0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3onqv"]
+
+[node name="Coche" type="RigidBody3D" unique_id=518288785 node_paths=PackedStringArray("label_velocimetro")]
+freeze = true
+script = ExtResource("1_4bayn")
+label_velocimetro = NodePath("Velocimetro")
+limite_agarre = 300.0
+tolerancia_derrape = 0.25
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1788524861]
+shape = SubResource("BoxShape3D_3onqv")
+
+[node name="Carroceria" type="MeshInstance3D" parent="." unique_id=1858971385]
+transform = Transform3D(0.66324425, 0, 0, 0, 0.61264086, 0, 0, 0, 0.56039816, 0, 0, 0)
+mesh = ExtResource("1_o4fc0")
+
+[node name="Velocimetro" type="Label3D" parent="." unique_id=27511083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6858438, 0)
+offset = Vector2(0, 1.5)
+billboard = 1
+text = "0"
+font_size = 100
