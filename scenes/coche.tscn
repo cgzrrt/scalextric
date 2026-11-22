@@ -7,11 +7,15 @@
 size = Vector3(1, 0.6032715, 1.4755859)
 
 [node name="Coche" type="RigidBody3D" unique_id=518288785 node_paths=PackedStringArray("label_velocimetro")]
+collision_mask = 3
 freeze = true
 script = ExtResource("1_4bayn")
 label_velocimetro = NodePath("Velocimetro")
-limite_agarre = 300.0
-tolerancia_derrape = 0.25
+velocidad_maxima = 200.0
+aceleracion = 20.0
+frenado_inercia = 20.0
+limite_agarre = 400.0
+tolerancia_derrape = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1788524861]
 transform = Transform3D(0.5426689, 0, 0, 0, 0.85803986, 0, 0, 0, 1.0447541, 0, 0.3162064, 0.048461914)

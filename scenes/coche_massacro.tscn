@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cpomsgpwrqerd"]
+
+[ext_resource type="PackedScene" uid="uid://6lqggwudr4fr" path="res://scenes/coche.tscn" id="1_hh3du"]
+[ext_resource type="PackedScene" uid="uid://bswq56wiekyr1" path="res://models/deportivo/Sport+car+-+gta+v.glb" id="2_g4lv5"]
+
+[node name="Coche" unique_id=518288785 instance=ExtResource("1_hh3du")]
+transform = Transform3D(1.0007418, 0, 0, 0, 1.0007418, 0, 0, 0, 1.0007418, 0.09925648, -0.018055769, 0.11800585)
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1788524861]
+transform = Transform3D(0.5426689, 0, 0, 0, 0.9626708, 0, 0, 0, 1.1928387, -0.095009305, 0.3354319, -0.14379288)
+
+[node name="Carroceria" parent="." index="1" unique_id=1858971385]
+transform = Transform3D(0.32518497, 0, 0, 0, 0.32518497, 0, 0, 0, 0.32518497, -0.023287302, 0.17717102, 0.0022577553)
+mesh = null
+
+[node name="Sport+car+-+gta+v" parent="Carroceria" index="0" unique_id=994608107 instance=ExtResource("2_g4lv5")]
+
+[node name="Velocimetro" parent="." index="2" unique_id=27511083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09149419, 0.9, -0.26363313)

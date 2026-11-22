@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://y8e8dkxs1s2p"]
+
+[ext_resource type="PackedScene" uid="uid://6lqggwudr4fr" path="res://scenes/coche.tscn" id="1_12pkk"]
+[ext_resource type="ArrayMesh" uid="uid://2ayd8qghecbn" path="res://models/audiConcept/AUDI_CONCEPT_B24_OBJ.obj" id="2_v5nfk"]
+
+[node name="Coche" unique_id=518288785 instance=ExtResource("1_12pkk")]
+transform = Transform3D(1.3698536, 0, 0, 0, 1.3698536, 0, 0, 0, 1.3698536, 0.031900186, 0.020629058, 0.015111797)
+frenado_inercia = 25.0
+limite_agarre = 500.0
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1788524861]
+transform = Transform3D(0.5426692, 0, 0, 0, 0.6192705, 0, 0, 0, 0.8891011, -0.014915809, 0.19435027, -0.007849221)
+
+[node name="Carroceria" parent="." index="1" unique_id=1858971385]
+mesh = ExtResource("2_v5nfk")
+
+[node name="Velocimetro" parent="." index="2" unique_id=27511083]
+transform = Transform3D(0.8655279, 0, 0, 0, 0.77534854, 0, 0, 0, 1.0000008, -0.025318515, 0.5958982, -0.031160694)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b06h3u4gssyon"]
+
+[ext_resource type="PackedScene" uid="uid://6lqggwudr4fr" path="res://scenes/coche.tscn" id="1_hu8ic"]
+[ext_resource type="PackedScene" uid="uid://biundtoer1pql" path="res://models/ferrari288/288.glb" id="2_gr3t7"]
+
+[node name="Coche" unique_id=518288785 instance=ExtResource("1_hu8ic")]
+transform = Transform3D(-0.4014611, 0, -3.5096843e-08, 0, 0.4014611, 0, 3.5096843e-08, 0, -0.4014611, 0.06999059, 0.011795822, 0.0005821434)
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1788524861]
+transform = Transform3D(1.5686382, 0, -5.684342e-14, 0, 1.9848293, 0, 0, 0, 2.936336, -0.15529235, 0.63414556, -0.018083226)
+
+[node name="Carroceria" parent="." index="1" unique_id=1858971385]
+mesh = null
+
+[node name="Animated Car Studio Showroom" parent="Carroceria" index="0" unique_id=901630330 instance=ExtResource("2_gr3t7")]
+
+[node name="Velocimetro" parent="." index="2" unique_id=27511083]
+transform = Transform3D(2.6292136, 0, -4.2632564e-14, 0, 2.4884615, 0, 1.2789769e-13, 0, 1.980118, -0.16376062, 2.1802497, -1.4319085e-08)

@@ -6,7 +6,7 @@
 [node name="Coche" unique_id=518288785 instance=ExtResource("1_h3b2p")]
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=1788524861]
-transform = Transform3D(0.6796036, 0, 0, 0, 0.8837603, 0, 0, 0, 1.1361675, 0, 0.21157277, -0.059290826)
+transform = Transform3D(0.6796036, 0, 0, 0, 0.8837603, 0, 0, 0, 1.212761, 0, 0.2930985, -0.02668041)
 
 [node name="Carroceria" parent="." index="1" unique_id=1858971385]
 transform = Transform3D(-0.0047182273, 0, -7.124325e-10, 0, 0.0047182273, 0, 7.124325e-10, 0, -0.0047182273, 0, 1.0632761e-07, 0)
@@ -15,4 +15,4 @@ mesh = null
 [node name="lancer" parent="Carroceria" index="0" unique_id=1881072742 instance=ExtResource("2_lu8xw")]
 
 [node name="Velocimetro" parent="." index="2" unique_id=27511083]
-transform = Transform3D(0.6085209, 0, 0, 0, 0.6141626, 0, 0, 0, 1, 0, 0.7188833, -0.1922073)
+transform = Transform3D(0.9445086, 0, 0, 0, 0.8203891, 0, 0, 0, 1, 0, 0.7953657, -0.1922073)

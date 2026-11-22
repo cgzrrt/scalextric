@@ -60,23 +60,18 @@ path_joined = false
 curve = SubResource("Curve3D_45ww7")
 
 [node name="guia_j1" type="PathFollow3D" parent="Carril_1" unique_id=1180362122]
-transform = Transform3D(0.7877989, -0.017347453, -0.61568815, 0, 0.99960226, -0.028164562, 0.6159325, 0.022187987, 0.7874863, -0.2350197, 9.824907, -9.745031)
+transform = Transform3D(0.7877989, -0.017347453, -0.6156878, 0, 0.99960226, -0.028164547, 0.6159325, 0.022187987, 0.7874859, -0.2350197, 9.824907, -9.745031)
 v_offset = 0.1
 
 [node name="Carril_2" type="Path3D" parent="." unique_id=1013719163]
 curve = SubResource("Curve3D_b3qw2")
 
 [node name="guia_j2" type="PathFollow3D" parent="Carril_2" unique_id=976359207]
-transform = Transform3D(0.7877989, -0.017347462, -0.61568785, 0, 0.9996028, -0.028164549, 0.6159325, 0.022187999, 0.78748596, 2.9135737, 9.974848, -7.2779737)
+transform = Transform3D(0.7877989, -0.017347462, -0.6156875, 0, 0.9996028, -0.028164532, 0.6159325, 0.022187999, 0.7874855, 2.9135737, 9.974848, -7.2779737)
 v_offset = 0.25
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=795784866 node_paths=PackedStringArray("objetivo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.92595, 0, 0)
-script = ExtResource("2_1nije")
-objetivo = NodePath("../Coche_j1")
-distancia = Vector3(0, 8, 12)
-
 [node name="Coche_j1" parent="." unique_id=518288785 node_paths=PackedStringArray("guia_carril") instance=ExtResource("3_1nije")]
+collision_mask = 3
 guia_carril = NodePath("../Carril_1/guia_j1")
 velocidad_maxima = 200.0
 aceleracion = 20.0
@@ -86,10 +81,62 @@ tiempo_penalizacion = 2.0
 fuerza_desvio_derecha = 2.0
 
 [node name="Coche_j2" parent="." unique_id=586271673 node_paths=PackedStringArray("guia_carril") instance=ExtResource("4_45ww7")]
+collision_mask = 3
 guia_carril = NodePath("../Carril_2/guia_j2")
+accion_acelerar = &"acelerar_j2"
 velocidad_maxima = 200.0
 aceleracion = 20.0
 frenado_inercia = 20.0
 limite_agarre = 500.0
 tiempo_penalizacion = 2.0
 fuerza_desvio_derecha = 2.0
+
+[node name="PantallaDividida" type="HBoxContainer" parent="." unique_id=2008049120]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="ContenedorJ1" type="SubViewportContainer" parent="PantallaDividida" unique_id=1774998425]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="ViewportJ1" type="SubViewport" parent="PantallaDividida/ContenedorJ1" unique_id=1537054855]
+handle_input_locally = false
+size = Vector2i(574, 648)
+render_target_update_mode = 4
+
+[node name="CameraJ1" type="Camera3D" parent="PantallaDividida/ContenedorJ1/ViewportJ1" unique_id=795784866 node_paths=PackedStringArray("objetivo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.92595, 0, 0)
+current = true
+fov = 79.0
+script = ExtResource("2_1nije")
+objetivo = NodePath("../../../../Coche_j1")
+distancia = Vector3(0, 8, 12)
+
+[node name="SeparadorPantallas" type="ColorRect" parent="PantallaDividida" unique_id=841768732]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ContenedorJ2" type="SubViewportContainer" parent="PantallaDividida" unique_id=545907197]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="ViewportJ2" type="SubViewport" parent="PantallaDividida/ContenedorJ2" unique_id=1828615558]
+handle_input_locally = false
+size = Vector2i(574, 648)
+render_target_update_mode = 4
+
+[node name="CameraJ2" type="Camera3D" parent="PantallaDividida/ContenedorJ2/ViewportJ2" unique_id=1451909845 node_paths=PackedStringArray("objetivo")]
+current = true
+fov = 79.0
+script = ExtResource("2_1nije")
+objetivo = NodePath("../../../../Coche_j2")
+distancia = Vector3(0, 8, 12)
