@@ -1,0 +1,16 @@
+CONTENTS -- Roadside Tales Free - Modular Bridge
+Maciej EmacArt
+================================================================
+
+OBJECT SCENES (total: 22)
+  Prefabs (22)
+
+ASSETS
+  Textures:     1
+  Meshes:       66
+  Materials:    24
+  Demo scenes:  1
+
+TOTAL FILES IN PACK: 166
+
+================================================================

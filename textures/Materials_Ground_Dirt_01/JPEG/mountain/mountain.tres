@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://vwi4kihrhvwd"]
+
+[ext_resource type="Texture2D" uid="uid://dulmhp15d274l" path="res://textures/Materials_Ground_Dirt_01/JPEG/mountain/StoneWall_01_basecolor.jpg" id="1_162am"]
+[ext_resource type="Texture2D" uid="uid://nnthuve2ox30" path="res://textures/Materials_Ground_Dirt_01/JPEG/mountain/StoneWall_01_ambientOcclusion.jpg" id="2_iwryk"]
+[ext_resource type="Texture2D" uid="uid://bs2dtqmocxlh7" path="res://textures/Materials_Ground_Dirt_01/JPEG/mountain/StoneWall_01_height.jpg" id="3_fjlwn"]
+[ext_resource type="Texture2D" uid="uid://ck6tq10hskgmp" path="res://textures/Materials_Ground_Dirt_01/JPEG/mountain/StoneWall_01_roughness.jpg" id="4_cup3k"]
+
+[resource]
+albedo_texture = ExtResource("1_162am")
+roughness_texture = ExtResource("4_cup3k")
+ao_enabled = true
+ao_texture = ExtResource("2_iwryk")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_fjlwn")

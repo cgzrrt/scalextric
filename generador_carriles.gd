@@ -14,6 +14,35 @@ extends Node3D
 	set(valor):
 		generar_carriles()
 
+@export var margen_sobre_suelo: float = 0.05
+
+@export var pegar_al_terreno: bool = false:
+	set(valor):
+		_ajustar_eje_al_terreno()
+
+func _ajustar_eje_al_terreno() -> void:
+	if not eje_central or not eje_central.curve:
+		return
+	
+	var espacio_fisico := get_world_3d().direct_space_state
+	var curva := eje_central.curve
+	
+	for i in range(curva.point_count):
+		var pos_global := eje_central.to_global(curva.get_point_position(i))
+		# Lanzamos un rayo desde 100 metros arriba hasta 100 metros abajo
+		var origen := Vector3(pos_global.x, pos_global.y + 100.0, pos_global.z)
+		var destino := Vector3(pos_global.x, pos_global.y - 100.0, pos_global.z)
+		
+		var consulta := PhysicsRayQueryParameters3D.create(origen, destino)
+		var resultado := espacio_fisico.intersect_ray(consulta)
+		
+		if resultado:
+			var nueva_pos_global := Vector3(pos_global.x, resultado.position.y + margen_sobre_suelo, pos_global.z)
+			curva.set_point_position(i, eje_central.to_local(nueva_pos_global))
+	
+	# Regeneramos los carriles automáticamente tras cambiar la altura
+	generar_carriles()
+
 func generar_carriles() -> void:
 	if not eje_central or not carril_izquierdo or not carril_derecho:
 		return

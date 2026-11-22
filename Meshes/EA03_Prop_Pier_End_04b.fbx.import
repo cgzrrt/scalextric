@@ -1,0 +1,112 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://b2o2vgjypeop6"
+path="res://.godot/imported/EA03_Prop_Pier_End_04b.fbx-0db88f1c46f6185bbcfaf964155fd135.scn"
+
+[deps]
+
+source_file="res://Meshes/EA03_Prop_Pier_End_04b.fbx"
+dest_files=["res://.godot/imported/EA03_Prop_Pier_End_04b.fbx-0db88f1c46f6185bbcfaf964155fd135.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=1
+meshes/generate_lods=true
+meshes/create_shadow_meshes=false
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=false
+animation/fps=30.0
+animation/trimming=true
+animation/remove_immutable_tracks=false
+animation/import_rest_as_RESET=true
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"animations": {},
+"materials": {
+"EA02_LPNP-Slavika_Colorsheet_v1.png.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/EmaceArt/Roadside Tales Bridges/Meshes/extracted/EA03_Prop_Pier_End_04b.EA02_LPNP-Slavika_Colorsheet_v1png001.material",
+"use_external/path": "uid://qlh7d1p167lp"
+}
+},
+"meshes": {
+"EA03_Prop_Pier_End_04b_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 90.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/EmaceArt/Roadside Tales Bridges/Meshes/extracted/EA03_Prop_Pier_End_04b.EA03_Prop_Pier_End_04b_005.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://cm5ian2rm7iix"
+},
+"EA03_Prop_Pier_End_04b_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 90.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/EmaceArt/Roadside Tales Bridges/Meshes/extracted/EA03_Prop_Pier_End_04b.EA03_Prop_Pier_End_04b_008.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://dry41sqv04v6i"
+},
+"EA03_Prop_Pier_End_04b_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 90.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/EmaceArt/Roadside Tales Bridges/Meshes/extracted/EA03_Prop_Pier_End_04b.EA03_Prop_Pier_End_04b_009.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://0gbjbpyp2g8"
+},
+"Root Scene_EA03_Prop_Pier_End_04b_005": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/EmaceArt/Roadside Tales Bridges/Meshes/extracted/EA03_Prop_Pier_End_04b.EA03_Prop_Pier_End_04b_005.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://cm5ian2rm7iix"
+},
+"Root Scene_EA03_Prop_Pier_End_04b_008": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/EmaceArt/Roadside Tales Bridges/Meshes/extracted/EA03_Prop_Pier_End_04b.EA03_Prop_Pier_End_04b_008.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://dry41sqv04v6i"
+},
+"Root Scene_EA03_Prop_Pier_End_04b_009": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/EmaceArt/Roadside Tales Bridges/Meshes/extracted/EA03_Prop_Pier_End_04b.EA03_Prop_Pier_End_04b_009.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://0gbjbpyp2g8"
+}
+},
+"nodes": {
+"PATH:AnimationPlayer": {
+"optimizer/enabled": true,
+"optimizer/max_angular_error": 0.00277777777777777,
+"optimizer/max_linear_error": 0.5
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

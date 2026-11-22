@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dehicpo6uisv1"]
+
+[ext_resource type="Texture2D" uid="uid://bmbjaff6j544g" path="res://textures/Materials_Ground_Dirt_01/JPEG/GroundDirt_01/GroundDirt_01_basecolor.jpg" id="1_dc4xu"]
+[ext_resource type="Texture2D" uid="uid://dv4l3egqlsn0f" path="res://textures/Materials_Ground_Dirt_01/JPEG/GroundDirt_01/GroundDirt_01_ambientOcclusion.jpg" id="2_j3t8m"]
+[ext_resource type="Texture2D" uid="uid://cp2q4he8wr8xm" path="res://textures/Materials_Ground_Dirt_01/JPEG/GroundDirt_01/GroundDirt_01_height.jpg" id="3_wcbqn"]
+[ext_resource type="Texture2D" uid="uid://28itv2w4ahem" path="res://textures/Materials_Ground_Dirt_01/JPEG/GroundDirt_01/GroundDirt_01_roughness.jpg" id="4_1bgm2"]
+
+[resource]
+albedo_texture = ExtResource("1_dc4xu")
+roughness_texture = ExtResource("4_1bgm2")
+ao_enabled = true
+ao_texture = ExtResource("2_j3t8m")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_wcbqn")
