@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c1scrbwmhd4ep"]
 
+[ext_resource type="Script" uid="uid://dnxij3ly64to7" path="res://scripts/car.gd" id="1_50v30"]
 [ext_resource type="ArrayMesh" uid="uid://e7k1x0mp8oqt" path="res://models/Car.obj" id="1_c35m8"]
 [ext_resource type="Texture2D" uid="uid://dw7r38dh1ib0s" path="res://models/car_red.png" id="2_qt2eu"]
 
@@ -10,6 +11,7 @@ albedo_texture = ExtResource("2_qt2eu")
 size = Vector3(1.6572266, 1, 4.305786)
 
 [node name="car" type="CharacterBody3D" unique_id=752035610]
+script = ExtResource("1_50v30")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1918988873]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

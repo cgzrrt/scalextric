@@ -1,59 +1,87 @@
 [gd_scene format=3 uid="uid://dkvx374sk6nvg"]
 
 [ext_resource type="Script" uid="uid://cv008igj42trt" path="res://scripts/level_editor.gd" id="1_1mfi1"]
-[ext_resource type="Texture2D" uid="uid://tlvgmnxtsmsp" path="res://assets/roadGrid.png" id="2_5u7ie"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5x0vf"]
-texture = ExtResource("2_5u7ie")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_uy3se"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_5x0vf")
+[ext_resource type="Theme" uid="uid://dy787fhwwohjn" path="res://resources/themes/road_theme.tres" id="2_nh68x"]
+[ext_resource type="Texture2D" uid="uid://dxux8pkf1n0n7" path="res://assets/UI/UI_Flat_InputField01a.png" id="3_5u7ie"]
 
 [node name="LevelEditor" type="Node2D" unique_id=1654558548]
 script = ExtResource("1_1mfi1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=222968242]
-zoom = Vector2(5, 5)
+zoom = Vector2(2, 2)
 
-[node name="TileMap" type="TileMap" parent="." unique_id=1480554572]
-tile_set = SubResource("TileSet_uy3se")
-format = 2
-layer_0/tile_data = PackedInt32Array(-65539, 0, 0, -3, 0, 1, 65533, 0, 2, -65538, 65536, 0, -2, 65536, 1, 65534, 65536, 2, -65537, 131072, 0, -1, 131072, 1, 65535, 131072, 2)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=161362681]
+
+[node name="LadoIzquierdo" type="PanelContainer" parent="CanvasLayer" unique_id=1717838070]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 94.0
+offset_bottom = 258.0
+theme = ExtResource("2_nh68x")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/LadoIzquierdo" unique_id=755839600]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/LadoIzquierdo/MarginContainer" unique_id=1785581947]
+layout_mode = 2
+theme_override_constants/v_separation = 50
+
+[node name="volver" type="Button" parent="CanvasLayer/LadoIzquierdo/MarginContainer/GridContainer" unique_id=1333226652]
+layout_mode = 2
+text = "VOLVER"
+
+[node name="nivel" type="TextureRect" parent="CanvasLayer/LadoIzquierdo/MarginContainer/GridContainer" unique_id=1133032088]
+layout_mode = 2
+texture = ExtResource("3_5u7ie")
+
+[node name="HBoxContainer" type="GridContainer" parent="CanvasLayer/LadoIzquierdo/MarginContainer/GridContainer/nivel" unique_id=1668989624]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 88.0
+offset_bottom = 72.0
+columns = 2
+
+[node name="bajar2" type="Button" parent="CanvasLayer/LadoIzquierdo/MarginContainer/GridContainer/nivel/HBoxContainer" unique_id=401243979]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<-"
+
+[node name="subir" type="Button" parent="CanvasLayer/LadoIzquierdo/MarginContainer/GridContainer/nivel/HBoxContainer" unique_id=1170506006]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "->"
+
+[node name="LadoDerechos" type="PanelContainer" parent="CanvasLayer" unique_id=266548597]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 258.0
+grow_horizontal = 0
+theme = ExtResource("2_nh68x")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/LadoDerechos" unique_id=2004901855]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/LadoDerechos/MarginContainer" unique_id=213805111]
+layout_mode = 2
+theme_override_constants/v_separation = 50
+
+[node name="HBoxContainer" type="GridContainer" parent="CanvasLayer/LadoDerechos/MarginContainer/GridContainer" unique_id=1313915919]
+layout_mode = 2
+columns = 2
+
+[node name="lapiz" type="Button" parent="CanvasLayer/LadoDerechos/MarginContainer/GridContainer/HBoxContainer" unique_id=1708751833]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "P"
+
+[node name="goma" type="Button" parent="CanvasLayer/LadoDerechos/MarginContainer/GridContainer/HBoxContainer" unique_id=1925438289]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "E"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/LadoDerechos/MarginContainer/GridContainer/HBoxContainer" unique_id=580756522]
+layout_mode = 2
