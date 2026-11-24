@@ -41,7 +41,7 @@ offset_right = 88.0
 offset_bottom = 72.0
 columns = 2
 
-[node name="bajar2" type="Button" parent="CanvasLayer/LadoIzquierdo/MarginContainer/GridContainer/nivel/HBoxContainer" unique_id=401243979]
+[node name="bajar" type="Button" parent="CanvasLayer/LadoIzquierdo/MarginContainer/GridContainer/nivel/HBoxContainer" unique_id=401243979]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "<-"
