@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cjrj6sk0alxkt" path="res://scenes/circuito.tscn" id="1_cevx6"]
 [ext_resource type="Script" uid="uid://dxq4p56omxx80" path="res://addons/lowpolyterrain/LowPolyTerrainManager.gd" id="2_jeesg"]
-[ext_resource type="Texture2D" uid="uid://3ai11q7f6gkv" path="res://cielos/cozy-sky-day/cozy-sky-day_2k.exr" id="2_twtvm"]
+[ext_resource type="Texture2D" uid="uid://3ai11q7f6gkv" path="res://assets/cielos/cozy-sky-day/cozy-sky-day_2k.exr" id="2_twtvm"]
 [ext_resource type="Material" uid="uid://dehicpo6uisv1" path="res://textures/Materials_Ground_Dirt_01/JPEG/GroundDirt_01/gravilla.tres" id="3_qh82h"]
 [ext_resource type="Material" uid="uid://vwi4kihrhvwd" path="res://textures/Materials_Ground_Dirt_01/JPEG/mountain/mountain.tres" id="4_twtvm"]
 
