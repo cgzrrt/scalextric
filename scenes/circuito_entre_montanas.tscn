@@ -117,7 +117,6 @@ margen_sobre_suelo = 0.01
 
 [node name="DirectionalLight3D" parent="." index="0" unique_id=1685864818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 101.25343, 0)
-visible = false
 
 [node name="WorldEnvironment" parent="." index="1" unique_id=1571843415]
 environment = SubResource("Environment_3onqv")
@@ -146,7 +145,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.474, -0.162, 27)
 curve = SubResource("Curve3D_0odkd")
 
 [node name="guia_j2" parent="Carril_2" index="0" unique_id=976359207]
-transform = Transform3D(0.951938, 0.0385633, 0.30385336, -1.862645e-09, 0.99204195, -0.12590414, -0.3062909, 0.11985296, 0.9443622, -3.0808542, 0.8943188, -8.9448595)
+transform = Transform3D(0.951938, 0.0385633, 0.30385336, -1.862645e-09, 0.99204195, -0.12590414, -0.3062909, 0.11985296, 0.9443623, -3.0808542, 0.8943188, -8.9448595)
 
 [node name="Coche_j1" parent="." index="6" unique_id=518288785]
 tolerancia_derrape = 0.1
