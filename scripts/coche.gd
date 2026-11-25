@@ -2,27 +2,19 @@ extends RigidBody3D
 class_name SlotCarController
 
 @export_group("Referencias")
-
-# Path follow que existe
 @export var guia_carril: PathFollow3D
 @export var label_velocimetro: Label3D
-
-# para que no salga uno encima de otro
+@export var punto_salida: Node3D
 @export var progreso_inicial: float = 0.0
 
 @export_group("Apariencia")
-
 @export var modelo: PackedScene
 @export var malla_carroceria: Mesh
 @export var tenir := false
 @export var color: Color = Color.WHITE
-
-# ajustar el tamaño
 @export var normalizar_tamano := true
 @export var largo_objetivo: float = 2.0
 @export var centrar_y_apoyar_en_suelo := true
-
-# ajuste manual
 @export var escala_modelo: float = 1.0
 @export var offset_modelo := Vector3.ZERO
 @export_range(-180.0, 180.0, 90.0) var rotacion_y_modelo: float = 0.0
@@ -41,23 +33,34 @@ class_name SlotCarController
 @export var tiempo_penalizacion: float = 3.0
 @export var fuerza_desvio_derecha: float = 4.0
 
+signal vuelta_completada(numero: int)
+
 var velocidad_actual: float = 0.0
+var distancia_recorrida: float = 0.0 # metros desde la salida
+var vueltas: int = 0
 var esta_descarrilado: bool = false
 var tiempo_sobrepasando_limite: float = 0.0
 var _curva: Curve3D
 var _longitud_pista: float = 0.0
 
+@onready var vueltas_j_2: Label = $"../CanvasLayer/UI/MarginContainer/Vueltas/HBoxContainer/vueltas_J2"
+@onready var vueltas_j_1: Label = $"../CanvasLayer/UI/MarginContainer/Vueltas/HBoxContainer/vueltas_J1"
+
 func _ready() -> void:
 	freeze = true
-	_aplicar_apariencia() # cargar el coche con la apariencia
+	_aplicar_apariencia()
 	if guia_carril and guia_carril.get_parent() is Path3D:
 		var path := guia_carril.get_parent() as Path3D
 		_curva = path.curve
 		_longitud_pista = _curva.get_baked_length()
+		if punto_salida:
+			# punto de la curva de este carril más cercano al marcador
+			progreso_inicial = _curva.get_closest_offset(path.to_local(punto_salida.global_position))
 		guia_carril.progress = progreso_inicial
 		global_transform = guia_carril.global_transform
+		distancia_recorrida = 0.0
+		vueltas = 0
 
-# cambia el modelo de esta instancia
 func _aplicar_apariencia() -> void:
 	var carroceria := get_node_or_null("Carroceria") as MeshInstance3D
 	var visual: Node3D = null
@@ -87,7 +90,6 @@ func _aplicar_apariencia() -> void:
 	if tenir:
 		_tenir_recursivo(visual)
 
-# escala la raiz para que sea como largo_obbjetivo
 func _normalizar_tamano(raiz: Node3D) -> void:
 	raiz.transform = Transform3D.IDENTITY
 
@@ -157,8 +159,24 @@ func _gestionar_aceleracion(delta: float) -> void:
 
 func _mover_por_carril(delta: float) -> void:
 	# PathFollow3D avanza directamente en metros reales
-	guia_carril.progress += velocidad_actual * delta
+	var avance := velocidad_actual * delta
+	guia_carril.progress += avance
 	global_transform = guia_carril.global_transform
+
+	distancia_recorrida += avance
+	if _longitud_pista > 0.0:
+		var vueltas_ahora := int(distancia_recorrida / _longitud_pista)
+		if vueltas_ahora > vueltas:
+			vueltas = vueltas_ahora
+			vuelta_completada.emit(vueltas)
+			
+			_actualizar_vuelta(vueltas)
+
+func _actualizar_vuelta(vueltas : int) -> void:
+	if accion_acelerar == &"acelerar_j1":
+		vueltas_j_1.text = str(vueltas)
+	else:
+		vueltas_j_2.text = str(vueltas)
 
 func _comprobar_descarrilamiento(delta: float) -> void:
 	if velocidad_actual < 2.0 or not _curva:
@@ -169,7 +187,7 @@ func _comprobar_descarrilamiento(delta: float) -> void:
 	var prog_atras := fposmod(prog_actual - 0.5, _longitud_pista)
 	var prog_adelante := fposmod(prog_actual + 0.5, _longitud_pista)
 
-	# -basis.z es el vector hacia adelante
+	# -basis.z es el vector "hacia adelante" en Godot
 	var dir_atras := -_curva.sample_baked_with_rotation(prog_atras).basis.z
 	var dir_adelante := -_curva.sample_baked_with_rotation(prog_adelante).basis.z
 
@@ -187,7 +205,7 @@ func _comprobar_descarrilamiento(delta: float) -> void:
 func _iniciar_descarrilamiento() -> void:
 	esta_descarrilado = true
 	
-	# levantamos unos milímetros para evitar roce con el suelo y activamos físicas
+	# Levantamos unos milímetros para evitar roce con el suelo y activamos físicas
 	global_position += Vector3.UP * 0.15
 	freeze = false
 
@@ -219,3 +237,9 @@ func _actualizar_velocimetro() -> void:
 	
 	var porcentaje := vel_visual / velocidad_maxima
 	label_velocimetro.modulate = Color.WHITE.lerp(Color.RED, porcentaje)
+
+## Metros recorridos dentro de la vuelta actual (0 en la salida).
+func distancia_vuelta_actual() -> float:
+	if _longitud_pista <= 0.0:
+		return 0.0
+	return fposmod(distancia_recorrida, _longitud_pista)

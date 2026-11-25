@@ -62,18 +62,19 @@ path_joined = false
 curve = SubResource("Curve3D_45ww7")
 
 [node name="guia_j1" type="PathFollow3D" parent="Carril_1" unique_id=1180362122]
-transform = Transform3D(0.7877989, -0.017347453, -0.61568695, 0, 0.99960226, -0.028164508, 0.6159325, 0.022187987, 0.7874848, 0.5527792, 9.824907, -9.129099)
+transform = Transform3D(0.7877989, -0.017347453, -0.6156867, 0, 0.99960226, -0.028164497, 0.6159325, 0.022187987, 0.78748447, 0.5527792, 9.824907, -9.129099)
 v_offset = 0.1
 
 [node name="Carril_2" type="Path3D" parent="." unique_id=1013719163]
 curve = SubResource("Curve3D_b3qw2")
 
 [node name="guia_j2" type="PathFollow3D" parent="Carril_2" unique_id=976359207]
-transform = Transform3D(0.7877989, -0.017347462, -0.61568666, 0, 0.9996028, -0.028164493, 0.6159325, 0.022187999, 0.7874844, 2.1257749, 9.974848, -7.893906)
+transform = Transform3D(0.7877989, -0.017347462, -0.6156865, 0, 0.9996028, -0.028164485, 0.6159325, 0.022187999, 0.7874842, 2.1257749, 9.974848, -7.893906)
 v_offset = 0.25
 
-[node name="Coche_j1" parent="." unique_id=518288785 node_paths=PackedStringArray("guia_carril") instance=ExtResource("3_1nije")]
+[node name="Coche_j1" parent="." unique_id=518288785 node_paths=PackedStringArray("guia_carril", "punto_salida") instance=ExtResource("3_1nije")]
 guia_carril = NodePath("../Carril_1/guia_j1")
+punto_salida = NodePath("../Salida")
 modelo = ExtResource("3_yltjc")
 malla_carroceria = ExtResource("4_76mc7")
 tenir = true
@@ -82,13 +83,17 @@ limite_agarre = 500.0
 tiempo_penalizacion = 2.0
 fuerza_desvio_derecha = 2.0
 
-[node name="Coche_j2" parent="." unique_id=1552466901 node_paths=PackedStringArray("guia_carril") instance=ExtResource("3_1nije")]
+[node name="Coche_j2" parent="." unique_id=1552466901 node_paths=PackedStringArray("guia_carril", "punto_salida") instance=ExtResource("3_1nije")]
 guia_carril = NodePath("../Carril_2/guia_j2")
+punto_salida = NodePath("../Salida")
 modelo = ExtResource("5_i6don")
 accion_acelerar = &"acelerar_j2"
 limite_agarre = 500.0
 tiempo_penalizacion = 2.0
 fuerza_desvio_derecha = 2.0
+
+[node name="Salida" type="Marker3D" parent="." unique_id=1973045864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.945782, 0, 2.1134768)
 
 [node name="PantallaDividida" type="HBoxContainer" parent="." unique_id=2008049120]
 anchors_preset = 15
@@ -140,20 +145,67 @@ script = ExtResource("2_1nije")
 objetivo = NodePath("../../../../Coche_j2")
 distancia = Vector3(0, 8, 12)
 
-[node name="UI" type="Control" parent="." unique_id=493280131]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1205453498]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=493280131]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1156.0
+offset_bottom = 649.0
 script = ExtResource("7_76mc7")
 
-[node name="Container" type="GridContainer" parent="UI" unique_id=498872155]
-layout_mode = 1
-offset_right = 57.0
-offset_bottom = 40.0
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI" unique_id=698182273]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 650.0
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
 
-[node name="Button" type="Button" parent="UI/Container" unique_id=1162995230]
+[node name="Container" type="GridContainer" parent="CanvasLayer/UI/MarginContainer" unique_id=498872155]
+layout_mode = 2
+
+[node name="Volver" type="Button" parent="CanvasLayer/UI/MarginContainer/Container" unique_id=1162995230]
 layout_mode = 2
 text = "Volver"
 
-[connection signal="button_down" from="UI/Container/Button" to="UI" method="_on_button_button_down"]
+[node name="Vueltas" type="GridContainer" parent="CanvasLayer/UI/MarginContainer" unique_id=1255773722]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Vueltas" type="Label" parent="CanvasLayer/UI/MarginContainer/Vueltas" unique_id=588118232]
+layout_mode = 2
+text = "Vueltas"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/MarginContainer/Vueltas" unique_id=928723877]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 23
+
+[node name="vueltas_J1" type="Label" parent="CanvasLayer/UI/MarginContainer/Vueltas/HBoxContainer" unique_id=718153027]
+layout_mode = 2
+text = "0"
+
+[node name="vueltas_J2" type="Label" parent="CanvasLayer/UI/MarginContainer/Vueltas/HBoxContainer" unique_id=871969717]
+layout_mode = 2
+text = "0"
+
+[node name="Posiciones" type="GridContainer" parent="CanvasLayer/UI/MarginContainer" unique_id=965573483]
+layout_mode = 2
+size_flags_horizontal = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/MarginContainer/Posiciones" unique_id=1558837418]
+layout_mode = 2
+text = "Posiciones:"
+
+[node name="Label_primero" type="Label" parent="CanvasLayer/UI/MarginContainer/Posiciones" unique_id=1162275007]
+layout_mode = 2
+text = "Jugador 1"
+
+[node name="Label_segundo" type="Label" parent="CanvasLayer/UI/MarginContainer/Posiciones" unique_id=980178070]
+layout_mode = 2
+text = "Jugador 2"
+
+[connection signal="button_down" from="CanvasLayer/UI/MarginContainer/Container/Volver" to="CanvasLayer/UI" method="_on_button_button_down"]
