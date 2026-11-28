@@ -62,14 +62,14 @@ path_joined = false
 curve = SubResource("Curve3D_45ww7")
 
 [node name="guia_j1" type="PathFollow3D" parent="Carril_1" unique_id=1180362122]
-transform = Transform3D(0.7877989, -0.017347453, -0.6156867, 0, 0.99960226, -0.028164497, 0.6159325, 0.022187987, 0.78748447, 0.5527792, 9.824907, -9.129099)
+transform = Transform3D(0.7877989, -0.017347453, -0.6156866, 0, 0.99960226, -0.028164491, 0.6159325, 0.022187987, 0.78748435, 0.5527792, 9.824907, -9.129099)
 v_offset = 0.1
 
 [node name="Carril_2" type="Path3D" parent="." unique_id=1013719163]
 curve = SubResource("Curve3D_b3qw2")
 
 [node name="guia_j2" type="PathFollow3D" parent="Carril_2" unique_id=976359207]
-transform = Transform3D(0.7877989, -0.017347462, -0.6156865, 0, 0.9996028, -0.028164485, 0.6159325, 0.022187999, 0.7874842, 2.1257749, 9.974848, -7.893906)
+transform = Transform3D(0.7877989, -0.017347462, -0.6156864, 0, 0.9996028, -0.028164484, 0.6159325, 0.022187999, 0.7874841, 2.1257749, 9.974848, -7.893906)
 v_offset = 0.25
 
 [node name="Coche_j1" parent="." unique_id=518288785 node_paths=PackedStringArray("guia_carril", "punto_salida") instance=ExtResource("3_1nije")]
@@ -121,7 +121,7 @@ current = true
 fov = 79.0
 script = ExtResource("2_1nije")
 objetivo = NodePath("../../../../Coche_j1")
-distancia = Vector3(0, 8, 12)
+distancia = Vector3(0, 7, 11)
 
 [node name="SeparadorPantallas" type="ColorRect" parent="PantallaDividida" unique_id=841768732]
 custom_minimum_size = Vector2(4, 0)
@@ -143,7 +143,7 @@ current = true
 fov = 79.0
 script = ExtResource("2_1nije")
 objetivo = NodePath("../../../../Coche_j2")
-distancia = Vector3(0, 8, 12)
+distancia = Vector3(0, 7, 11)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1205453498]
 

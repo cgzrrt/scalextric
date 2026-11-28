@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cl4jy8kueyp8k"]
+
+[ext_resource type="Texture2D" uid="uid://dvtqpm1c4lvt0" path="res://textures/Asphalt_01/JPEG/Asphalt_04/Asphalt_04_basecolor.jpg" id="1_i2ld6"]
+[ext_resource type="Texture2D" uid="uid://l1d855xgaxkd" path="res://textures/Asphalt_01/JPEG/Asphalt_04/Asphalt_04_ambientocclusion.jpg" id="2_vuwtf"]
+[ext_resource type="Texture2D" uid="uid://b2atx8asprjo5" path="res://textures/Asphalt_01/JPEG/Asphalt_04/Asphalt_04_height.jpg" id="3_einjj"]
+[ext_resource type="Texture2D" uid="uid://bxvg6iuer5reh" path="res://textures/Asphalt_01/JPEG/Asphalt_04/Asphalt_04_metallic.jpg" id="4_66xge"]
+[ext_resource type="Texture2D" uid="uid://tquimqvum1bl" path="res://textures/Asphalt_01/JPEG/Asphalt_04/Asphalt_04_roughness.jpg" id="5_lpi8m"]
+
+[resource]
+albedo_texture = ExtResource("1_i2ld6")
+metallic = 1.0
+metallic_texture = ExtResource("4_66xge")
+roughness_texture = ExtResource("5_lpi8m")
+ao_enabled = true
+ao_texture = ExtResource("2_vuwtf")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_einjj")
