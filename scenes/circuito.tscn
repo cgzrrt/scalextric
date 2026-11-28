@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://cjrj6sk0alxkt"]
 
-[ext_resource type="Script" uid="uid://16txgf5jw5bq" path="res://generador_carriles.gd" id="1_1nije"]
-[ext_resource type="Script" uid="uid://c1t3dijr53c8g" path="res://Camara_seguidora.gd" id="2_1nije"]
+[ext_resource type="Script" uid="uid://16txgf5jw5bq" path="res://scripts/generador_carriles.gd" id="1_1nije"]
+[ext_resource type="Script" uid="uid://c1t3dijr53c8g" path="res://scripts/Camara_seguidora.gd" id="2_1nije"]
 [ext_resource type="PackedScene" uid="uid://6lqggwudr4fr" path="res://scenes/coche.tscn" id="3_1nije"]
-[ext_resource type="PackedScene" uid="uid://l12pf2n8dj2y" path="res://scenes/coche_porsche718.tscn" id="4_45ww7"]
+[ext_resource type="PackedScene" uid="uid://dsisacl854goc" path="res://models/lancer/lancer.obj" id="3_yltjc"]
+[ext_resource type="ArrayMesh" uid="uid://2ayd8qghecbn" path="res://models/audiConcept/AUDI_CONCEPT_B24_OBJ.obj" id="4_76mc7"]
+[ext_resource type="PackedScene" uid="uid://biundtoer1pql" path="res://models/ferrari288/288.glb" id="5_i6don"]
+[ext_resource type="Script" uid="uid://kp5ln10sbu2p" path="res://scripts/ui_carrera.gd" id="7_76mc7"]
 
 [sub_resource type="Curve3D" id="Curve3D_iwv0p"]
 closed = true
@@ -15,14 +18,14 @@ point_count = 9
 
 [sub_resource type="Curve3D" id="Curve3D_45ww7"]
 _data = {
-"points": PackedVector3Array(-1.6131105, -0.073791504, 2.0632234, 1.6131105, 0.073791504, -2.0632234, -0.23328495, 9.724947, -9.747251, -5.803335, -0.21283722, 3.8907814, 5.803335, 0.21283722, -3.8907814, 19.18279, 8.077483, -32.96814, -2.214119, -1.0985088, -10.274279, 2.214119, 1.0985088, 10.274279, 42.24525, 8.8828945, -26.551928, 51.569607, 1.9698296, -23.466003, -51.569607, -1.9698296, 23.466003, 39.291786, 1.276724, 82.40782, 2.2828636, -0.20421791, 7.363373, -2.2828636, 0.20421791, -7.363373, -31.845034, 0.7124127, 76.78831, -0.23890686, 0.5138917, 7.854347, 0.23890686, -0.5138917, -7.854347, -36.206837, 0.67722654, 45.354816, -3.7391796, -1.4704833, 6.5721226, 3.7391796, 1.4704833, -6.5721226, -28.606478, 2.2616005, 21.680988, -4.609514, -1.484252, 3.1131477, 4.609514, 1.484252, -3.1131477, -15.13508, 7.433997, 11.120903, -3.6023598, -0.29643822, 5.8140893, 3.6023598, 0.29643822, -5.8140893, -5.7362013, 9.755626, -1.0872208),
+"points": PackedVector3Array(-1.6131105, -0.073791504, 2.0632234, 1.6131105, 0.073791504, -2.0632234, 0.55451393, 9.724947, -9.131318, -5.803335, -0.21283722, 3.8907814, 5.803335, 0.21283722, -3.8907814, 19.739397, 8.086883, -32.137413, -2.214119, -1.0985088, -10.274279, 2.214119, 1.0985088, 10.274279, 41.27049, 8.826706, -26.33586, 51.569607, 1.9698296, -23.466003, -51.569607, -1.9698296, 23.466003, 38.87644, 1.3413153, 81.50046, 2.2828636, -0.20421791, 7.363373, -2.2828636, 0.20421791, -7.363373, -30.89073, 0.76348823, 76.493866, -0.23890686, 0.5138917, 7.854347, 0.23890686, -0.5138917, -7.854347, -35.20861, 0.7302969, 45.38171, -3.7391796, -1.4704833, 6.5721226, 3.7391796, 1.4704833, -6.5721226, -27.740803, 2.2932453, 22.180592, -4.609514, -1.484252, 3.1131477, 4.609514, 1.484252, -3.1131477, -14.558003, 7.344461, 11.93267, -3.6023598, -0.29643822, 5.8140893, 3.6023598, 0.29643822, -5.8140893, -4.88606, 9.751707, -0.56068045),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 9
 
 [sub_resource type="Curve3D" id="Curve3D_b3qw2"]
 _data = {
-"points": PackedVector3Array(-1.6131105, -0.073791504, 2.0632234, 1.6131105, 0.073791504, -2.0632234, 2.9179106, 9.724947, -7.2835207, -5.803335, -0.21283722, 3.8907814, 5.803335, 0.21283722, -3.8907814, 21.409212, 8.115081, -29.645243, -2.214119, -1.0985088, -10.274279, 2.214119, 1.0985088, 10.274279, 38.34621, 8.658142, -25.68765, 51.569607, 1.9698296, -23.466003, -51.569607, -1.9698296, 23.466003, 37.630386, 1.5350894, 78.778366, 2.2828636, -0.20421791, 7.363373, -2.2828636, 0.20421791, -7.363373, -28.027822, 0.9167148, 75.61053, -0.23890686, 0.5138917, 7.854347, 0.23890686, -0.5138917, -7.854347, -32.213924, 0.8895078, 45.462383, -3.7391796, -1.4704833, 6.5721226, 3.7391796, 1.4704833, -6.5721226, -25.143774, 2.3881798, 23.679401, -4.609514, -1.484252, 3.1131477, 4.609514, 1.484252, -3.1131477, -12.826773, 7.0758524, 14.3679695, -3.6023598, -0.29643822, 5.8140893, 3.6023598, 0.29643822, -5.8140893, -2.335637, 9.739949, 1.0189406),
+"points": PackedVector3Array(-1.6131105, -0.073791504, 2.0632234, 1.6131105, 0.073791504, -2.0632234, 2.1301117, 9.724947, -7.899453, -5.803335, -0.21283722, 3.8907814, 5.803335, 0.21283722, -3.8907814, 20.852606, 8.105681, -30.475965, -2.214119, -1.0985088, -10.274279, 2.214119, 1.0985088, 10.274279, 39.320972, 8.714331, -25.903719, 51.569607, 1.9698296, -23.466003, -51.569607, -1.9698296, 23.466003, 38.045734, 1.4704981, 79.68573, 2.2828636, -0.20421791, 7.363373, -2.2828636, 0.20421791, -7.363373, -28.982126, 0.86563927, 75.90497, -0.23890686, 0.5138917, 7.854347, 0.23890686, -0.5138917, -7.854347, -33.21215, 0.8364374, 45.43549, -3.7391796, -1.4704833, 6.5721226, 3.7391796, 1.4704833, -6.5721226, -26.009449, 2.356535, 23.179798, -4.609514, -1.484252, 3.1131477, 4.609514, 1.484252, -3.1131477, -13.40385, 7.1653886, 13.556203, -3.6023598, -0.29643822, 5.8140893, 3.6023598, 0.29643822, -5.8140893, -3.1857781, 9.743868, 0.49240023),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 9
@@ -32,7 +35,6 @@ script = ExtResource("1_1nije")
 eje_central = NodePath("EjeCentral")
 carril_izquierdo = NodePath("Carril_1")
 carril_derecho = NodePath("Carril_2")
-separacion_del_centro = 2.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1685864818]
 
@@ -60,36 +62,38 @@ path_joined = false
 curve = SubResource("Curve3D_45ww7")
 
 [node name="guia_j1" type="PathFollow3D" parent="Carril_1" unique_id=1180362122]
-transform = Transform3D(0.7877989, -0.017347453, -0.6156878, 0, 0.99960226, -0.028164547, 0.6159325, 0.022187987, 0.7874859, -0.2350197, 9.824907, -9.745031)
+transform = Transform3D(0.7877989, -0.017347453, -0.6156867, 0, 0.99960226, -0.028164497, 0.6159325, 0.022187987, 0.78748447, 0.5527792, 9.824907, -9.129099)
 v_offset = 0.1
 
 [node name="Carril_2" type="Path3D" parent="." unique_id=1013719163]
 curve = SubResource("Curve3D_b3qw2")
 
 [node name="guia_j2" type="PathFollow3D" parent="Carril_2" unique_id=976359207]
-transform = Transform3D(0.7877989, -0.017347462, -0.6156875, 0, 0.9996028, -0.028164532, 0.6159325, 0.022187999, 0.7874855, 2.9135737, 9.974848, -7.2779737)
+transform = Transform3D(0.7877989, -0.017347462, -0.6156865, 0, 0.9996028, -0.028164485, 0.6159325, 0.022187999, 0.7874842, 2.1257749, 9.974848, -7.893906)
 v_offset = 0.25
 
-[node name="Coche_j1" parent="." unique_id=518288785 node_paths=PackedStringArray("guia_carril") instance=ExtResource("3_1nije")]
-collision_mask = 3
+[node name="Coche_j1" parent="." unique_id=518288785 node_paths=PackedStringArray("guia_carril", "punto_salida") instance=ExtResource("3_1nije")]
 guia_carril = NodePath("../Carril_1/guia_j1")
-velocidad_maxima = 200.0
-aceleracion = 20.0
-frenado_inercia = 20.0
+punto_salida = NodePath("../Salida")
+modelo = ExtResource("3_yltjc")
+malla_carroceria = ExtResource("4_76mc7")
+tenir = true
+color = Color(1, 0.30980393, 1, 1)
 limite_agarre = 500.0
 tiempo_penalizacion = 2.0
 fuerza_desvio_derecha = 2.0
 
-[node name="Coche_j2" parent="." unique_id=586271673 node_paths=PackedStringArray("guia_carril") instance=ExtResource("4_45ww7")]
-collision_mask = 3
+[node name="Coche_j2" parent="." unique_id=1552466901 node_paths=PackedStringArray("guia_carril", "punto_salida") instance=ExtResource("3_1nije")]
 guia_carril = NodePath("../Carril_2/guia_j2")
+punto_salida = NodePath("../Salida")
+modelo = ExtResource("5_i6don")
 accion_acelerar = &"acelerar_j2"
-velocidad_maxima = 200.0
-aceleracion = 20.0
-frenado_inercia = 20.0
 limite_agarre = 500.0
 tiempo_penalizacion = 2.0
 fuerza_desvio_derecha = 2.0
+
+[node name="Salida" type="Marker3D" parent="." unique_id=1973045864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.945782, 0, 2.1134768)
 
 [node name="PantallaDividida" type="HBoxContainer" parent="." unique_id=2008049120]
 anchors_preset = 15
@@ -140,3 +144,68 @@ fov = 79.0
 script = ExtResource("2_1nije")
 objetivo = NodePath("../../../../Coche_j2")
 distancia = Vector3(0, 8, 12)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1205453498]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=493280131]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1156.0
+offset_bottom = 649.0
+script = ExtResource("7_76mc7")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI" unique_id=698182273]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 650.0
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="Container" type="GridContainer" parent="CanvasLayer/UI/MarginContainer" unique_id=498872155]
+layout_mode = 2
+
+[node name="Volver" type="Button" parent="CanvasLayer/UI/MarginContainer/Container" unique_id=1162995230]
+layout_mode = 2
+text = "Volver"
+
+[node name="Vueltas" type="GridContainer" parent="CanvasLayer/UI/MarginContainer" unique_id=1255773722]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Vueltas" type="Label" parent="CanvasLayer/UI/MarginContainer/Vueltas" unique_id=588118232]
+layout_mode = 2
+text = "Vueltas"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/MarginContainer/Vueltas" unique_id=928723877]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 23
+
+[node name="vueltas_J1" type="Label" parent="CanvasLayer/UI/MarginContainer/Vueltas/HBoxContainer" unique_id=718153027]
+layout_mode = 2
+text = "0"
+
+[node name="vueltas_J2" type="Label" parent="CanvasLayer/UI/MarginContainer/Vueltas/HBoxContainer" unique_id=871969717]
+layout_mode = 2
+text = "0"
+
+[node name="Posiciones" type="GridContainer" parent="CanvasLayer/UI/MarginContainer" unique_id=965573483]
+layout_mode = 2
+size_flags_horizontal = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/MarginContainer/Posiciones" unique_id=1558837418]
+layout_mode = 2
+text = "Posiciones:"
+
+[node name="Label_primero" type="Label" parent="CanvasLayer/UI/MarginContainer/Posiciones" unique_id=1162275007]
+layout_mode = 2
+text = "Jugador 1"
+
+[node name="Label_segundo" type="Label" parent="CanvasLayer/UI/MarginContainer/Posiciones" unique_id=980178070]
+layout_mode = 2
+text = "Jugador 2"
+
+[connection signal="button_down" from="CanvasLayer/UI/MarginContainer/Container/Volver" to="CanvasLayer/UI" method="_on_button_button_down"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cjrj6sk0alxkt" path="res://scenes/circuito.tscn" id="1_cevx6"]
 [ext_resource type="Script" uid="uid://dxq4p56omxx80" path="res://addons/lowpolyterrain/LowPolyTerrainManager.gd" id="2_jeesg"]
-[ext_resource type="Texture2D" uid="uid://3ai11q7f6gkv" path="res://cielos/cozy-sky-day/cozy-sky-day_2k.exr" id="2_twtvm"]
+[ext_resource type="Texture2D" uid="uid://3ai11q7f6gkv" path="res://assets/cielos/cozy-sky-day/cozy-sky-day_2k.exr" id="2_twtvm"]
 [ext_resource type="Material" uid="uid://dehicpo6uisv1" path="res://textures/Materials_Ground_Dirt_01/JPEG/GroundDirt_01/gravilla.tres" id="3_qh82h"]
 [ext_resource type="Material" uid="uid://vwi4kihrhvwd" path="res://textures/Materials_Ground_Dirt_01/JPEG/mountain/mountain.tres" id="4_twtvm"]
 
@@ -145,12 +145,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.474, -0.162, 27)
 curve = SubResource("Curve3D_0odkd")
 
 [node name="guia_j2" parent="Carril_2" index="0" unique_id=976359207]
-transform = Transform3D(0.951938, 0.0385633, 0.30385336, -1.862645e-09, 0.99204195, -0.12590414, -0.3062909, 0.11985296, 0.9443623, -3.0808542, 0.8943188, -8.9448595)
+transform = Transform3D(0.951938, 0.0385633, 0.3038534, -1.862645e-09, 0.99204195, -0.12590416, -0.3062909, 0.11985296, 0.94436234, -3.0808542, 0.8943188, -8.9448595)
 
 [node name="Coche_j1" parent="." index="6" unique_id=518288785]
 tolerancia_derrape = 0.1
 
-[node name="Coche_j2" parent="." index="7" unique_id=586271673]
+[node name="Coche_j2" parent="." index="7" unique_id=1552466901]
+tenir = true
+color = Color(1.6003474e-06, 0.50830454, 0.0098681515, 1)
 tolerancia_derrape = 0.1
 
 [node name="LowPolyTerrainManager" type="Node3D" parent="." index="9" unique_id=1663317356]

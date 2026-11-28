@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6lqggwudr4fr"]
 
-[ext_resource type="Script" uid="uid://dflaapam61rh7" path="res://scenes/coche.gd" id="1_4bayn"]
+[ext_resource type="Script" uid="uid://dflaapam61rh7" path="res://scripts/coche.gd" id="1_4bayn"]
 [ext_resource type="ArrayMesh" uid="uid://e7k1x0mp8oqt" path="res://models/Car.obj" id="1_o4fc0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3onqv"]
